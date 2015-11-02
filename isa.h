@@ -7,19 +7,19 @@
 class IsA : public Link
 {
 public:
-    IsA() //AbstractObject* o
+    IsA(AbstractObject *o) //AbstractObject* o
     {
-       // linked = o; // link to o.
+        linked = o; // link to o
     }
-   virtual  ~IsA();
-   virtual QList<Property*> getMethod()
-    {
-     //   linked->coutProperties();   // как вариант, т.к. не может нормально тут вызвать - написать класс -обработчик
-      //   return linked->getPorperties();
-        return QList<Property*>();
-    }
-private:
-     AbstractObject* linked;
+   virtual  ~IsA(){}
+   virtual QList<Property*> getMethod()const;
+//    {
+//     //   linked->coutProperties();   // как вариант, т.к. не может нормально тут вызвать - написать класс -обработчик
+//      //   return linked->getPorperties();
+//        return QList<Property*>();
+//    }
+/*private:
+     AbstractObject* linked;*/ // перенести в родительский класс, иначе будет slicing **done
 
 };
 

@@ -28,6 +28,8 @@ public:
 signals:
 
 public slots:
+protected:
+     AbstractObject* linked;
 };
 
 #endif // LINK_H

@@ -8,7 +8,8 @@
 #include <QObject>
 #include <QDebug>
 #include "link.h"
-#include "isa.h"
+
+class IsA;
 
 class AbstractObject //: public QObject
 {
@@ -46,19 +47,22 @@ public:
         return res;
     }
 
-  void coutProperties()
-  {
-      printProp();
-      for (int i = 0; i < isaLinks.length(); i++)
-      {
-     //   isaLinks[i]->getMethod();
-      }
-  }
+  void coutProperties();
+//  {
+//      printProp();
+//      for (int i = 0; i < isaLinks.length(); i++)
+//      {
+//        isaLinks[i]->getMethod();
+//      }
+//  }
+
+  void addLink(AbstractObject *obj);
 
 private:
 
     QList <Property*> properties;
-    QList <Link*> isaLinks;
+    //QList <IsA*> isaLinks;
+    QList <Link*> isaLinks;  // стоит ли написать конструктор копирования для Links?
 
 
 };
