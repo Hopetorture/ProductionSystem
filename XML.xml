@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Docs version="1.0"> 
-  <object ID="" LinksToID="A,b,c,d"> <!-- split by "," -->
-    <property text ="" LinkTo="property"> </property><!-- видимо, нужно будет сделать лист объектов и пропертисов -->
-  </object>
-    
+  <object ID="Sky" LinksToID="a,b,c,d"> <!-- split by "," -->
+    <property text ="blue" LinkTo="property,prop2"> </property><!-- видимо, нужно будет сделать лист объектов и пропертисов -->
+  </object>    
 </Docs> 
 
 <!--ID
