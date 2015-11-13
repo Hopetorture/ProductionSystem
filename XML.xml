@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Docs version="1.0"> 
-  <object ID="Sky" LinksToID="earth,d"> <!-- split by "," -->
-    <property text ="blue" LinkTo="property,prop2"> </property><!-- видимо, нужно будет сделать лист объектов и пропертисов -->
+  <object ID="Sky" LinksToID="earth,d,d1"> <!-- split by "," -->
+    <property text ="blue" LinkTo="property,prop2"> </property>
+    <property text ="clear" LinkTo="property,prop2"> </property>    
+    <!-- видимо, нужно будет сделать лист объектов и пропертисов -->
   </object> 
   <object ID="earth" LinksToID="">
     <property text ="brown" LinkTo="HardToSleep,useful for food growing"> </property>
+    <property text ="furtile" LinkTo="HardToSleep,useful for food growing"></property>
+    <property text ="surface" LinkTo="HardToSleep,useful for food growing"></property>
   </object>
   <object ID="d" LinksToID="">
     <property text ="just a d" LinkTo=""> </property>
+    <property text ="stands for nothing" LinkTo=""> </property>
   </object>
     <object ID="d1" LinksToID="">
     <property text ="just a d1" LinkTo=""> </property>
+    <property text ="just a d2" LinkTo=""> </property>
   </object> 
 </Docs> 
 
