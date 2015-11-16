@@ -17,12 +17,18 @@ SOURCES += main.cpp\
     abstractobject.cpp \
     property.cpp \
     isa.cpp \
-    link.cpp
+    link.cpp \
+    objectpool.cpp \
+    propertypool.cpp \
+    xmlparser.cpp
 
 HEADERS  += mainwindow.h \
     abstractobject.h \
     property.h \
     isa.h \
-    link.h
+    link.h \
+    objectpool.h \
+    propertypool.h \
+    xmlparser.h
 
 FORMS    += mainwindow.ui

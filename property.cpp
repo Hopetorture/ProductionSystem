@@ -5,8 +5,4 @@
 
 //}
 
-Property::~Property()
-{
-
-}
 

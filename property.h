@@ -2,6 +2,10 @@
 #define PROPERTY_H
 
 #include <QString>
+#include <QStringList>
+#include <QDebug>
+//#include <QList>
+
 class Property
 {
 public:
@@ -9,8 +13,13 @@ public:
     {
         data = s;
     }
-    ~Property();
+    ~Property()
+    {
+        qDebug() << "Property Destroyed";
+    }
     QString data;
+   // QList <Property*> ptr;
+    QStringList ptrString;
     // сделать указатель на др. property
 };
 

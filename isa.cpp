@@ -14,6 +14,7 @@
 
 QList<Property *> IsA::getMethod() const
 {
+   // linked->coutProperties();
     linked->coutProperties();
     return QList<Property*>();
 }
