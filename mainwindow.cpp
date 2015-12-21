@@ -30,8 +30,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ObjectPool::instance().init();    
 
 // /* qDebug() << */ ObjectPool::instance().pool[0]->dbg();
+    qDebug() <<  ObjectPool::instance().pool[0]->id;
     /* qDebug() << */ ObjectPool::instance().pool[0]->coutProperties();
+
  // qDebug() << ObjectPool::instance().pool[0]->id; //pool[0] = sky
+
+
 
 }
 

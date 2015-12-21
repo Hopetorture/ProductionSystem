@@ -9,6 +9,7 @@
 #include <QDebug>
 #include "link.h"
 
+
 class IsA;
 
 class AbstractObject //: public QObject
@@ -34,7 +35,7 @@ public:
     }
     void setID(QString s){this->id = s;}
 
-    void printProp()
+    void printProp()const
     {
         for (Property* p : properties)
         {
@@ -42,7 +43,7 @@ public:
            // qDebug() <<"baM!";
         }
     }
-    QStringList getPorperties()
+    QStringList getPorperties() const
     {
        QStringList res;
         for (Property* p : properties)
@@ -63,7 +64,7 @@ public:
 //      }
 //  }
 
-  void addLink(AbstractObject *obj);
+  void addLink(AbstractObject *obj, QString type="IsA");
   void addStrLink(QStringList s){stringLinks = s;}
   void init();
 //  void test()
@@ -91,10 +92,24 @@ public:
        a->getMethod();
    }
 
+   qDebug() << "---------------";
+   qDebug() << "YYYYYYYYYYYYYYYYYYY";
+   qDebug() << "type:";
+  // qDebug() << this->LinksType;
+
   }
+  QStringList linktype()
+  {
+     return this->LinksType; //чет тут какая-то муть, нужно разбираться
+  }
+
   //QString ID(){return id;}
 
   QString id;
+  bool visited = false;
+
+ // QList<Property*> getProps(){return this->properties;}
+  void addLinksType(QStringList s){LinksType = s;}
 
 private:
 
@@ -102,6 +117,7 @@ private:
     //QList <IsA*> isaLinks;
     QList <Link*> isaLinks;  // стоит ли написать конструктор копирования для Links?
     QStringList stringLinks ; // для корректной инициализации
+    QStringList LinksType;
 
 
 };

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Docs version="1.0"> 
-  <object ID="Sky" LinksToID="earth,d,d1,lastOBJ,qt"> <!-- split by "," -->
+<Docs version="1.0">   
+  <!-- Тестовая база. -->  
+  <!--
+  <object ID="Sky" LinksToID="earth,d,d1,lastOBJ,qt"> </ split by "," />
     <property text ="blue" LinkTo="property,prop2"> </property>
-    <property text ="clear" LinkTo="property,prop2"> </property>    
-    <!-- видимо, нужно будет сделать лист объектов и пропертисов -->
+    <property text ="clear" LinkTo="property,prop2"> </property>   
+   
   </object> 
   <object ID="earth" LinksToID="eLink">
     <property text ="brown" LinkTo="HardToSleep,useful for food growing"> </property>
@@ -23,7 +25,39 @@
   </object>
   <object ID="qt" LinksToID="">
     <property text ="qq" LinkTo=""> </property>   
-  </object> 
+    </object> -->
+  <!--Конец тестовой базы. начало продакт-базы. -->
+    <object ID="Triangle" LinksToID="FourTrinagles" LinksType="quads">
+    <property text ="side A"> </property>
+    <property text ="side B"> </property>  
+    <property text ="side C"> </property>
+    <property text ="right-angled triangle"> </property>
+    <property text ="Допустим, что A, B - Катеты."> </property> 
+    <property text ="Area = 1/2(A*B)"> </property>    
+  </object>
+   <object ID="BigSquare" LinksToID="FourTrinagles,LittleSquare" LinksType="consistOf,consistOf">
+    <property text ="Square"> </property>
+    <property text ="side C"> </property> 
+    <property text ="Area = C^2"> </property> 
+  </object>
+  <object ID="FourTrinagles" LinksToID="BigSquare,LittleSquare" LinksType="forms,forms">
+    <!--TODO: Допилить связь quads, forms,partof, consistOf. Пока что в XML-e лишь макеты связей. 
+    Еще сделать так, что бы связи инициализировались в 1 месте.
+    -->
+    <!--связь consistOf можно представить так - она дергает из объектов, на которые указывает их площадь, а потом складываем полученные площади и сравниваем с BigSquare.Area; -->
+    <property text ="4 копии Triangle, образующие внешний и внутренний квадрат."> </property>
+   <!-- <property text ="side A *4"> </property>
+    <property text ="side B *4"> </property>  
+    <property text ="side C *4"> </property> -->
+    <property text ="Area = 1/2(A*B) *4"> </property>     
+  </object>
+  <object ID="LittleSquare" LinksToID="BigSquare" LinksType="partof">    
+    <!--скорее всего у меня в проге криво обрабатываются циклические зависимости объектов. -->
+    <property text ="side B-A"> </property>
+    <property text ="square"> </property>
+    <property text ="Area = (B-A)^2"> </property>
+  </object>  
+  <!--Cделать 22 теорему - доказательство парадокса дней рождений?. -->  
 </Docs> 
 
 <!--ID

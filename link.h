@@ -23,6 +23,7 @@ public:
    explicit Link();//QObject *parent = 0
    virtual ~Link();
    virtual QList<Property*> getMethod()const = 0;
+   AbstractObject* getLinked(){return linked;}
 
 
 signals:

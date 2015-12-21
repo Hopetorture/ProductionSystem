@@ -30,8 +30,9 @@ void XMLParser::Parse()
   //  bool objPackerActive = false; // флаг целостности объекта
     //QPair <> obj;
     QStringList objLinks;
+    QStringList objLinksTypes;
     QString objID;
-    QStringList props;
+    QStringList props;    
     bool flag = false;
     int i = 0;
 
@@ -58,9 +59,9 @@ void XMLParser::Parse()
                   * */
 
 
-                // qDebug() << objLinks;
+              //   qDebug() << objLinksTypes << " OBJECT LINK TYPES";
                  if (flag) {
-                 ObjectPool::instance().pushObj(objID,objLinks,props);
+                 ObjectPool::instance().pushObj(objID,objLinks,props,objLinksTypes);
                  i++;
 //                 qDebug() << i << "ITERATION" ;
 //                 qDebug() << objID << "OBJ ID" ;
@@ -68,6 +69,7 @@ void XMLParser::Parse()
 //                 qDebug() << objLinks << "OBJ LINKS" ;
 
                  objLinks.clear();
+                 objLinksTypes.clear();
                  objID.clear();
                //  qDebug() << props;
                  props.clear();
@@ -77,7 +79,7 @@ void XMLParser::Parse()
                  flag = true;
                  objID = XMLparser.attributes().value("ID").toString(); //QString
                  objLinks = XMLparser.attributes().value("LinksToID").toString().split(","); //QStringList
-
+                 objLinksTypes = XMLparser.attributes().value("LinksType").toString().split(",");
                 //tmp.questionText = XMLparser.attributes().value("text").toString();
               //  tmp.questionType = XMLparser.attributes().value("type").toInt();
 //                qDebug() <<tmp.questionText;
@@ -134,7 +136,7 @@ void XMLParser::Parse()
 
 
 
-    ObjectPool::instance().pushObj(objID,objLinks,props);
+    ObjectPool::instance().pushObj(objID,objLinks,props,objLinksTypes);
     i++;
     objLinks.clear();
     objID.clear();

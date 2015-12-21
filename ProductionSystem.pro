@@ -20,7 +20,11 @@ SOURCES += main.cpp\
     link.cpp \
     objectpool.cpp \
     propertypool.cpp \
-    xmlparser.cpp
+    xmlparser.cpp \
+    quads.cpp \
+    forms.cpp \
+    consistsof.cpp \
+    partof.cpp
 
 HEADERS  += mainwindow.h \
     abstractobject.h \
@@ -29,6 +33,10 @@ HEADERS  += mainwindow.h \
     link.h \
     objectpool.h \
     propertypool.h \
-    xmlparser.h
+    xmlparser.h \
+    quads.h \
+    forms.h \
+    consistsof.h \
+    partof.h
 
 FORMS    += mainwindow.ui

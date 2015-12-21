@@ -22,7 +22,7 @@ public:
     }
    // pushObj(QString s,QStringList qsl);  // можно запушить две пары.
     //pushObj(QPair<QString,QStringList> obj,QPair<QString,QStringList> prop);  // можно запушить две пары.
-   void pushObj(QString objID, QStringList objLinks, QStringList props);
+   void pushObj(QString objID, QStringList objLinks, QStringList props, QStringList type);
    void pushObj(AbstractObject* obj);
    AbstractObject* getPtr(QString s);
 

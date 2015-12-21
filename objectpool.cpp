@@ -3,7 +3,7 @@
 
 
 
-void ObjectPool::pushObj(QString objID, QStringList objLinks, QStringList props)
+void ObjectPool::pushObj(QString objID, QStringList objLinks, QStringList props,QStringList type)
 {
     //zx.insert(QStringList("list"),"string");
     //zx.insert(QStringList("list111"),"string222");
@@ -19,9 +19,10 @@ void ObjectPool::pushObj(QString objID, QStringList objLinks, QStringList props)
            // qDebug() << s << "HERE";
           obj->addProp(s); // добавить метод копирования
         }
-    obj->setID(objID); // нужно где-то хранить или получать
-    obj-> addStrLink(objLinks); // тексто-ссылки на др. объекты.
-    this->pool.push_back(obj);
+    obj -> setID(objID); // нужно где-то хранить или получать
+    obj -> addStrLink(objLinks); // тексто-ссылки на др. объекты.
+    obj -> addLinksType(type);
+    this -> pool.push_back(obj);
 
 }
 

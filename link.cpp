@@ -2,7 +2,7 @@
 
 Link::Link()// : QObject(parent)
 {
-
+    linked = nullptr;
 }
 
 Link::~Link()
