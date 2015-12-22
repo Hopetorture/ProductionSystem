@@ -1,64 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Docs version="1.0">   
-  <!-- Тестовая база. -->  
-  <!--
-  <object ID="Sky" LinksToID="earth,d,d1,lastOBJ,qt"> </ split by "," />
-    <property text ="blue" LinkTo="property,prop2"> </property>
-    <property text ="clear" LinkTo="property,prop2"> </property>   
-   
-  </object> 
-  <object ID="earth" LinksToID="eLink">
-    <property text ="brown" LinkTo="HardToSleep,useful for food growing"> </property>
-    <property text ="furtile" LinkTo="HardToSleep,useful for food growing"></property>
-    <property text ="surface" LinkTo="HardToSleep,useful for food growing"></property>
-  </object>
-  <object ID="d" LinksToID="dLink">
-    <property text ="just a d" LinkTo=""> </property>
-    <property text ="stands for nothing" LinkTo=""> </property>
-  </object>
-    <object ID="d1" LinksToID="d1 Link">
-    <property text ="just a d1" LinkTo=""> </property>
-    <property text ="just a d2" LinkTo=""> </property>
-  </object> 
-  <object ID="lastOBJ" LinksToID="">
-    <property text ="last object" LinkTo=""> </property>   
-  </object>
-  <object ID="qt" LinksToID="">
-    <property text ="qq" LinkTo=""> </property>   
-    </object> -->
-  <!--Конец тестовой базы. начало продакт-базы. -->
+<Docs version="1.0">  
     <object ID="Triangle" LinksToID="FourTrinagles" LinksType="quads">
-    <property text ="side A"> </property>
-    <property text ="side B"> </property>  
-    <property text ="side C"> </property>
-    <property text ="right-angled triangle / прямоугольный треугольник"> </property>
-    <property text ="Допустим, что A, B - Катеты."> </property> 
-    <property text ="Area = 1/2(A*B)"> </property>    
-  </object>
-   
-  <object ID="FourTrinagles" LinksToID="BigSquare,LittleSquare" LinksType="forms,forms"> 
-    <property text ="4 копии Triangle, образующие внешний и внутренний квадрат. гипотенузами наружу.">
-    </property>
-    <!-- <property text ="Area = 1/2(A*B) *4"> </property>    --> 
-  </object>  
-  <object ID="LittleSquare" LinksToID="LogicObject" LinksType="logical">    
-    <!-- <property text ="side B-A"> </property> -->
-    <property text ="square"> </property>
-    <!--  <property text ="Area = (B-A)^2"> </property> -->
-  </object> 
-  <object ID="BigSquare" LinksToID="" LinksType="">
-    <property text ="Square"> </property>
-    <!-- <property text ="side C"> </property> -->
-    <!-- <property text ="Area = C^2"> </property>  -->
-  </object>
-   <object ID="LogicObject" LinksToID="" LinksType="">
-    <property text ="this object computes"> </property>
-  </object>
-  <!--Cделать 2 теорему - доказательство парадокса дней рождений?. -->  
+      <property text ="side A"> </property>
+      <property text ="side B"> </property>  
+      <property text ="side C"> </property>
+      <property text ="right-angled triangle / прямоугольный треугольник"> </property>
+      <property text ="Допустим, что A, B - Катеты."> </property> 
+      <property text ="Area = 1/2(A*B)"> </property>    
+    </object>  
+    
+    <object ID="FourTrinagles" LinksToID="BigSquare,LittleSquare" LinksType="forms,forms"> 
+      <property text ="4 копии Triangle, образующие внешний и внутренний квадрат. гипотенузами наружу."></property>    
+    </object>  
+    
+    <object ID="LittleSquare" LinksToID="LogicObject" LinksType="logical">   
+      <property text ="square"> </property>
+    </object> 
+    
+    <object ID="BigSquare" LinksToID="" LinksType="">
+      <property text ="Square"> </property>
+    </object>
+    
+    <object ID="LogicObject" LinksToID="" LinksType="">
+      <property text ="this object computes"> </property>
+    </object> 
 </Docs> 
 
-<!--ID
-LinksTo{ID,ID,ID, ...}
-Properties {String,String, ...}
-PropertiesLinks {propertyPTR,propertyPTR,...}
-propertyPTR = -->
