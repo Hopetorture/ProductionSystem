@@ -7,10 +7,11 @@
 class Forms : public Link
 {
 public:
-    Forms(AbstractObject *o) //AbstractObject* o
+    Forms(AbstractObject *o)
     {
-        linked = o; // link to o
+        linked = o;
     }
+    Forms(){}
    virtual  ~Forms(){}
    virtual QList<Property*> getMethod()const;
 };

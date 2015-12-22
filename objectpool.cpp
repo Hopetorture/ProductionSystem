@@ -5,21 +5,14 @@
 
 void ObjectPool::pushObj(QString objID, QStringList objLinks, QStringList props,QStringList type)
 {
-    //zx.insert(QStringList("list"),"string");
-    //zx.insert(QStringList("list111"),"string222");
-   // qDebug() << objID + "ID /n" << objLinks;
+
     AbstractObject *obj = new AbstractObject;
-//    for (Property p : this -> QList<Property>) //нужен мок-лист.
-//    {
-//      obj->addProp(); // добавить метод копирования,
-//                      //
-//    }
-        for (QString s : props) //нужен мок-лист.
-        {
-           // qDebug() << s << "HERE";
-          obj->addProp(s); // добавить метод копирования
+
+        for (QString s : props)
+        {           
+          obj->addProp(s);
         }
-    obj -> setID(objID); // нужно где-то хранить или получать
+    obj -> setID(objID);
     obj -> addStrLink(objLinks); // тексто-ссылки на др. объекты.
     obj -> addLinksType(type);
     this -> pool.push_back(obj);
@@ -33,12 +26,7 @@ void ObjectPool::pushObj(AbstractObject *obj)
 
 AbstractObject *ObjectPool::getPtr(QString s)
 {
-//    for (int i = 0; i <= this->pool.length(); i++)
-//    {
-//        if (pool[i]->id == s)
-//            return pool[i];
 
-//    }
     for (AbstractObject* obj : pool)
     {
         if ( s == "" )
@@ -53,5 +41,4 @@ AbstractObject *ObjectPool::getPtr(QString s)
     }
     qWarning() << "getPtr() not returned a pointer. Consider changing a knowledge base";
     throw(qt_error_string());
-   // return nullptr;
 }

@@ -5,21 +5,25 @@
 
 
 
-class PropertyPool
+class DataPool
 {
-    ~PropertyPool(){}
+    ~DataPool(){}
 
-     static PropertyPool &instance()
+public:
+     static DataPool &instance()
      {
-         static PropertyPool config;
+         static DataPool config;
          return config;
      }
+
+      QStringList strList;
+      QString fourTriangles;
+      QString bigSq;
  private:
 
-     QList<Link*> pool;
-     PropertyPool() {init();}
-     PropertyPool(const PropertyPool&) {}
-     PropertyPool &operator=(const PropertyPool&) {return *this;}
+     DataPool() {init();}
+     DataPool(const DataPool&) {}
+     DataPool &operator=(const DataPool&) {return *this;}
 
      void init() {}
 };

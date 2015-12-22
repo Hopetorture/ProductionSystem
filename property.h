@@ -4,7 +4,7 @@
 #include <QString>
 #include <QStringList>
 #include <QDebug>
-//#include <QList>
+
 
 class Property
 {
@@ -15,12 +15,11 @@ public:
     }
     ~Property()
     {
-        qDebug() << "Property Destroyed";
+
     }
-    QString data;
-   // QList <Property*> ptr;
+    QString data;   
     QStringList ptrString;
-    // сделать указатель на др. property
+
 };
 
 #endif // PROPERTY_H

@@ -1,4 +1,5 @@
 #include "partof.h"
+#include "abstractobject.h"
 
 
 

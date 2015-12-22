@@ -1,10 +1,13 @@
 #include "consistsof.h"
+#include "abstractobject.h"
 
 
 
 
 QList<Property *> ConsistsOf::getMethod() const
 {
-    qDebug() << "consistsOF link, fill me up with code";
-    return QList<Property*>();
+   qDebug() << parent->id << "Состоит из" << linked->id << " ";
+   qDebug() << linked->getPorperties().filter("Area",Qt::CaseInsensitive);
+
+   return QList<Property*>();
 }

@@ -20,8 +20,8 @@ public:
     ~XMLParser(){}
     void setPath(QString s);
     void Parse(const QString &path);
-    void Parse(); // придумать, что возвращать. pair (obj, links) pair (properties,links) (mb?)
-        // или сразу закидывать все в пулы объектов.
+    void Parse();
+
 private:
     QString xmlPath;
 };

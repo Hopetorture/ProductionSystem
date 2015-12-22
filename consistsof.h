@@ -6,10 +6,11 @@
 class ConsistsOf : public Link
 {
 public:
-    ConsistsOf(AbstractObject *o) //AbstractObject* o
+    ConsistsOf(AbstractObject *o)
     {
-        linked = o; // link to o
+        linked = o;
     }
+    ConsistsOf(){}
    virtual  ~ConsistsOf(){}
    virtual QList<Property*> getMethod()const;
 };

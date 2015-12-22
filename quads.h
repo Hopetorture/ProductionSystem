@@ -7,11 +7,12 @@
 class Quads : public Link
 {
 public:
-    //Quads();
-    Quads(AbstractObject *o) //AbstractObject* o
+
+    Quads(AbstractObject *o)
     {
-        linked = o; // link to o
+        linked = o;
     }
+    Quads(){}
    virtual  ~Quads(){}
    virtual QList<Property*> getMethod()const;
 };

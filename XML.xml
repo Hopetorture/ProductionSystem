@@ -31,33 +31,30 @@
     <property text ="side A"> </property>
     <property text ="side B"> </property>  
     <property text ="side C"> </property>
-    <property text ="right-angled triangle"> </property>
+    <property text ="right-angled triangle / прямоугольный треугольник"> </property>
     <property text ="Допустим, что A, B - Катеты."> </property> 
     <property text ="Area = 1/2(A*B)"> </property>    
   </object>
-   <object ID="BigSquare" LinksToID="FourTrinagles,LittleSquare" LinksType="consistOf,consistOf">
-    <property text ="Square"> </property>
-    <property text ="side C"> </property> 
-    <property text ="Area = C^2"> </property> 
-  </object>
-  <object ID="FourTrinagles" LinksToID="BigSquare,LittleSquare" LinksType="forms,forms">
-    <!--TODO: Допилить связь quads, forms,partof, consistOf. Пока что в XML-e лишь макеты связей. 
-    Еще сделать так, что бы связи инициализировались в 1 месте.
-    -->
-    <!--связь consistOf можно представить так - она дергает из объектов, на которые указывает их площадь, а потом складываем полученные площади и сравниваем с BigSquare.Area; -->
-    <property text ="4 копии Triangle, образующие внешний и внутренний квадрат."> </property>
-   <!-- <property text ="side A *4"> </property>
-    <property text ="side B *4"> </property>  
-    <property text ="side C *4"> </property> -->
-    <property text ="Area = 1/2(A*B) *4"> </property>     
-  </object>
-  <object ID="LittleSquare" LinksToID="BigSquare" LinksType="partof">    
-    <!--скорее всего у меня в проге криво обрабатываются циклические зависимости объектов. -->
-    <property text ="side B-A"> </property>
-    <property text ="square"> </property>
-    <property text ="Area = (B-A)^2"> </property>
+   
+  <object ID="FourTrinagles" LinksToID="BigSquare,LittleSquare" LinksType="forms,forms"> 
+    <property text ="4 копии Triangle, образующие внешний и внутренний квадрат. гипотенузами наружу.">
+    </property>
+    <!-- <property text ="Area = 1/2(A*B) *4"> </property>    --> 
   </object>  
-  <!--Cделать 22 теорему - доказательство парадокса дней рождений?. -->  
+  <object ID="LittleSquare" LinksToID="LogicObject" LinksType="logical">    
+    <!-- <property text ="side B-A"> </property> -->
+    <property text ="square"> </property>
+    <!--  <property text ="Area = (B-A)^2"> </property> -->
+  </object> 
+  <object ID="BigSquare" LinksToID="" LinksType="">
+    <property text ="Square"> </property>
+    <!-- <property text ="side C"> </property> -->
+    <!-- <property text ="Area = C^2"> </property>  -->
+  </object>
+   <object ID="LogicObject" LinksToID="" LinksType="">
+    <property text ="this object computes"> </property>
+  </object>
+  <!--Cделать 2 теорему - доказательство парадокса дней рождений?. -->  
 </Docs> 
 
 <!--ID

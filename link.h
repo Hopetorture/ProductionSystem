@@ -3,34 +3,32 @@
 
 #include <QObject>
 #include "property.h"
-//#include "abstractobject.h"
-#include <QSharedPointer>
 class AbstractObject;
 
 
-class Link //: public QObject
+class Link
 {
-  //  Q_OBJECT
 
-   //QSharedPointer<AbstractObject> referencedObject;
 public:
 
-//  void setPointer(AbstractObject *a)
-//  {
-//      referencedObject = new QSharedPointer(a);
-
-//  }
-   explicit Link();//QObject *parent = 0
+   explicit Link();
    virtual ~Link();
    virtual QList<Property*> getMethod()const = 0;
    AbstractObject* getLinked(){return linked;}
+   void setLink(AbstractObject *linked)
+   {
+       this->linked = linked;
+   }
+   void setParent(AbstractObject* o){parent = o;}
+
+   QString getParentId();
+   QString getLinkedId();
 
 
-signals:
 
-public slots:
 protected:
      AbstractObject* linked;
+     AbstractObject* parent;
 };
 
 #endif // LINK_H

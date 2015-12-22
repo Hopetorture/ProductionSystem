@@ -24,7 +24,9 @@ SOURCES += main.cpp\
     quads.cpp \
     forms.cpp \
     consistsof.cpp \
-    partof.cpp
+    partof.cpp \
+    linkfactory.cpp \
+    logical.cpp
 
 HEADERS  += mainwindow.h \
     abstractobject.h \
@@ -37,6 +39,8 @@ HEADERS  += mainwindow.h \
     quads.h \
     forms.h \
     consistsof.h \
-    partof.h
+    partof.h \
+    linkfactory.h \
+    logical.h
 
 FORMS    += mainwindow.ui

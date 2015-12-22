@@ -7,10 +7,11 @@
 class PartOf : public Link
 {
 public:
-    PartOf(AbstractObject *o) //AbstractObject* o
+    PartOf(AbstractObject *o)
     {
-        linked = o; // link to o
+        linked = o;
     }
+    PartOf(){}
    virtual  ~PartOf(){}
    virtual QList<Property*> getMethod()const;
 };
