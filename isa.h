@@ -2,8 +2,8 @@
 #define ISA_H
 
 #include "link.h"
-
 #include "abstractobject.h"
+
 class IsA : public Link
 {
 public:
@@ -13,7 +13,7 @@ public:
     }
     IsA(){}
    virtual  ~IsA(){}
-   virtual QList<Property*> getMethod()const;
+   virtual void getMethod();
 };
 
 #endif // ISA_H

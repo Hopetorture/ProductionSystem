@@ -4,7 +4,7 @@
 
 
 
-QList<Property *> Quads::getMethod() const
+void Quads::getMethod()
 {
      QStringList props = parent->getPorperties();
      for (QString &s : props)
@@ -15,13 +15,12 @@ QList<Property *> Quads::getMethod() const
              linked->addProp(s);
          }
      }
+
      props.filter("Area",Qt::CaseInsensitive);
      linked->addProp(props.filter("Area",Qt::CaseInsensitive).join(";"));
-    DataPool::instance().fourTriangles = linked->getPorperties().filter("Area =").join("").replace("Area =","");
-    qDebug() << linked->getPorperties().filter("Area =").join("") << "ДОЛЖНЫ БЫТЬ ПЛОЩАДЬ 4 ТРЕУГОЛЬНИКОВ.";
+
+     DataPool::instance().fourTriangles = linked->getPorperties().filter("Area =").join("").replace("Area =","");
+    //qDebug() << linked->getPorperties().filter("Area =").join("") << "ДОЛЖНЫ БЫТЬ ПЛОЩАДЬ 4 ТРЕУГОЛЬНИКОВ.";
      linked->massInvoke(true);
 
-
-
-     return QList<Property*>();
 }

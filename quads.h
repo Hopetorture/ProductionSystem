@@ -13,8 +13,8 @@ public:
         linked = o;
     }
     Quads(){}
-   virtual  ~Quads(){}
-   virtual QList<Property*> getMethod()const;
+    virtual  ~Quads(){}
+    virtual void getMethod();
 };
 
 #endif // QUADS_H

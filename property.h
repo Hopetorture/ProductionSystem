@@ -13,12 +13,8 @@ public:
     {
         data = s;
     }
-    ~Property()
-    {
-
-    }
-    QString data;   
-    QStringList ptrString;
+    ~Property(){}
+    QString data;
 
 };
 

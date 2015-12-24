@@ -9,17 +9,18 @@ class AbstractObject;
 class Link
 {
 
-public:
+public:   
 
    explicit Link();
    virtual ~Link();
-   virtual QList<Property*> getMethod()const = 0;
+   virtual void getMethod() = 0;
+
    AbstractObject* getLinked(){return linked;}
-   void setLink(AbstractObject *linked)
-   {
-       this->linked = linked;
-   }
+   void setLink(AbstractObject *linked){ this->linked = linked; }
    void setParent(AbstractObject* o){parent = o;}
+
+   void setLinkType(QString s){linkType = s;}
+   QString getLinkType(){return this->linkType;}
 
    QString getParentId();
    QString getLinkedId();
@@ -29,6 +30,7 @@ public:
 protected:
      AbstractObject* linked;
      AbstractObject* parent;
+     QString linkType;
 };
 
 #endif // LINK_H

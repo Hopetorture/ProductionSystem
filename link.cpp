@@ -13,11 +13,11 @@ Link::~Link()
 
 QString Link::getParentId()
 {
-    return this->parent->id;
+    return this->parent->getID();
 }
 
 QString Link::getLinkedId()
 {
- return this->linked->id;
+   return this->linked->getID();
 }
 

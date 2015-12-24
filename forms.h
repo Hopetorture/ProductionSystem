@@ -12,8 +12,9 @@ public:
         linked = o;
     }
     Forms(){}
-   virtual  ~Forms(){}
-   virtual QList<Property*> getMethod()const;
+
+    virtual  ~Forms(){}
+    virtual void getMethod();
 };
 
 #endif // FORMS_H

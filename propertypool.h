@@ -4,7 +4,6 @@
 #include "link.h"
 
 
-
 class DataPool
 {
     ~DataPool(){}
@@ -19,6 +18,7 @@ public:
       QStringList strList;
       QString fourTriangles;
       QString bigSq;
+      void clear(){strList.clear();fourTriangles.clear();bigSq.clear();}
  private:
 
      DataPool() {init();}
@@ -26,6 +26,7 @@ public:
      DataPool &operator=(const DataPool&) {return *this;}
 
      void init() {}
+
 };
 
 #endif // PROPERTYPOOL_H

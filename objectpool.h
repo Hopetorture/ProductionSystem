@@ -1,9 +1,6 @@
 #ifndef OBJECTPOOL_H
 #define OBJECTPOOL_H
 
-
-#include <QHash>
-
 #include "abstractobject.h"
 
 /*
@@ -25,14 +22,10 @@ public:
    void pushObj(AbstractObject* obj);
    AbstractObject* getPtr(QString s);
 
-   void init()
-   {
+   void init();
 
-       for (int i = 0; i < pool.length(); i++)
-       {
-            pool[i]->init();
-       }
-   }
+   void clean();
+
    QList<AbstractObject*> pool;
 private:
 

@@ -5,10 +5,10 @@
 
 
 
-QList<Property *> Forms::getMethod() const
+void Forms::getMethod()
 {
     QString side;
-    if (linked->id == "LittleSquare")
+    if (linked->getID() == "LittleSquare")
        {
          side = "Сторона: ";
          side += parent->getPorperties().filter("side B").replaceInStrings("*4","").join(" ");
@@ -24,7 +24,7 @@ QList<Property *> Forms::getMethod() const
     QString area = "Area = ( " ;
     linked->addProp(area + side.replace("Сторона:", "") + " )" + "^2");
 
-    qDebug() << parent->id << "образует: " << linked->id << "cо стороной" << side <<  "и свойствами: ";
+    qDebug() << parent->getID() << "образует: " << linked->getID() << "cо стороной" << side <<  "и свойствами: ";
 
     qDebug() << "RECTANGLE: ";
     linked->printProp();
@@ -33,11 +33,10 @@ QList<Property *> Forms::getMethod() const
     tmp.replace("Area ="," ");
     DataPool::instance().strList.append(tmp);
 
-    if (linked->id == "LittleSquare")
+    if (linked->getID() == "LittleSquare")
     {
         linked->massInvoke(false);
 
     }
 
-    return QList<Property*>();
 }

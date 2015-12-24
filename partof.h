@@ -12,8 +12,8 @@ public:
         linked = o;
     }
     PartOf(){}
-   virtual  ~PartOf(){}
-   virtual QList<Property*> getMethod()const;
+    virtual  ~PartOf(){}
+    virtual void getMethod();
 };
 
 #endif // PARTOF_H

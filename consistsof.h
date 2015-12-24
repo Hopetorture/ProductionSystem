@@ -12,7 +12,7 @@ public:
     }
     ConsistsOf(){}
    virtual  ~ConsistsOf(){}
-   virtual QList<Property*> getMethod()const;
+   virtual void getMethod();
 };
 
 #endif // CONSISTSOF_H

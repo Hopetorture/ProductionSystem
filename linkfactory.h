@@ -10,7 +10,7 @@ class LinkFactory
 {
 public:
     LinkFactory();
-    ~LinkFactory(){}
+   ~LinkFactory(){}
     Link* getLink(QString s);
 private:
     QHash <QString,std::function<Link*()> > patternHash;

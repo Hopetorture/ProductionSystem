@@ -4,10 +4,8 @@
 
 
 
-QList<Property *> ConsistsOf::getMethod() const
+void ConsistsOf::getMethod()
 {
-   qDebug() << parent->id << "Состоит из" << linked->id << " ";
+   qDebug() << parent->getID() << "Состоит из" << linked->getID() << " ";
    qDebug() << linked->getPorperties().filter("Area",Qt::CaseInsensitive);
-
-   return QList<Property*>();
 }

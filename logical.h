@@ -8,7 +8,7 @@ class Logical : public Link
 public:
     Logical();
     virtual ~Logical(){}
-    virtual QList<Property*> getMethod()const;
+    virtual void getMethod();
 private:
     QString s = "C";
 };

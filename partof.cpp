@@ -5,8 +5,7 @@
 
 
 
-QList<Property *> PartOf::getMethod() const
+void PartOf::getMethod()
 {
     qDebug() << "this is PartOf link, fill me up with code";
-    return QList<Property*>();
 }

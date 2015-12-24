@@ -9,13 +9,29 @@
 
 #include <QDebug>
 
-AbstractObject::AbstractObject()
-{
-}
 
 AbstractObject::~AbstractObject()
 {
+}
 
+void AbstractObject::printProp() const
+{
+    for (Property* p : properties)
+    {
+        qDebug() << p->data;
+    }
+}
+
+QStringList AbstractObject::getPorperties() const
+{
+    QStringList res;
+    for (Property* p : properties)
+    {
+        res.push_back(p->data);
+
+
+    }
+    return res;
 }
 
 void AbstractObject::massInvoke(bool doPrintProp)
@@ -28,20 +44,24 @@ void AbstractObject::massInvoke(bool doPrintProp)
         if (!isaLinks[i]->getLinked()->visited)
         {
              isaLinks[i]->getMethod();
-             isaLinks[i]->getLinked()->visited = true;
+            // isaLinks[i]->getLinked()->visited = true;
         }
     }
 }
 
 void AbstractObject::singleInvoke(QString s)
 {
-  for (int i = 0; i < isaLinks.length(); i++ )
-  {
-      if (isaLinks[i]->getLinkedId() == s )
-      {
-          isaLinks[i]->getMethod();
-      }
-  }
+    for(Link* link : isaLinks)
+    {       
+        if (link->getLinkType() == s)
+        {
+            link->getMethod();
+        }
+        else
+        {
+           // qWarning() << "wrong argument in Single Invoke  " << s;
+        }
+    }
 }
 
 void AbstractObject::addLink(AbstractObject* obj,QString type)
@@ -57,12 +77,12 @@ void AbstractObject::addLink(AbstractObject* obj,QString type)
 
 void AbstractObject::init()
 {
-
-    for (int i = 0; i < stringLinks.length(); i++)
+    int i=0;
+    for (QString s : stringLinks)
     {
         try
         {
-            this->addLink (ObjectPool::instance().getPtr(stringLinks[i]),this->LinksType[i]);
+            this->addLink (ObjectPool::instance().getPtr(s),this->LinksType[i]);
         }
 
         catch(QString &s)
@@ -74,6 +94,8 @@ void AbstractObject::init()
         {
             qDebug() << "caught!";
         }
+
+        i++;
     }
 
 }

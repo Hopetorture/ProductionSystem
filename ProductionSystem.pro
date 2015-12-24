@@ -26,7 +26,10 @@ SOURCES += main.cpp\
     consistsof.cpp \
     partof.cpp \
     linkfactory.cpp \
-    logical.cpp
+    logical.cpp \
+    rand.cpp \
+    debug_link.cpp \
+    calc.cpp \
 
 HEADERS  += mainwindow.h \
     abstractobject.h \
@@ -41,6 +44,9 @@ HEADERS  += mainwindow.h \
     consistsof.h \
     partof.h \
     linkfactory.h \
-    logical.h
+    logical.h \
+    rand.h \
+    debug_link.h \
+    calc.h \
 
 FORMS    += mainwindow.ui

@@ -45,7 +45,6 @@ void XMLParser::Parse()
                      ObjectPool::instance().pushObj(objID,objLinks,props,objLinksTypes);
                      i++;
 
-
                      objLinks.clear();
                      objLinksTypes.clear();
                      objID.clear();
@@ -67,8 +66,6 @@ void XMLParser::Parse()
                 props.append(qs);
              }
 
-
-
          }
          else if(XMLparser.isEndElement())
          {
@@ -80,7 +77,7 @@ void XMLParser::Parse()
 
 
 
-    ObjectPool::instance().pushObj(objID,objLinks,props,objLinksTypes);
+    ObjectPool::instance().pushObj(objID,objLinks,props,objLinksTypes); //qDebug() << objID << "ID";
     i++;
     objLinks.clear();
     objID.clear();

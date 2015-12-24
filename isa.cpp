@@ -3,9 +3,8 @@
 
 
 
-QList<Property *> IsA::getMethod() const
+void IsA::getMethod()
 {
     linked->massInvoke(true);
-    return QList<Property*>();
 }
 

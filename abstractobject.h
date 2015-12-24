@@ -1,12 +1,12 @@
 #ifndef ABSTRACTOBJECT_H
 #define ABSTRACTOBJECT_H
 
-
 #include <QList>
-#include "property.h"
 #include <QStringList>
 #include <QObject>
 #include <QDebug>
+
+#include "property.h"
 #include "link.h"
 
 
@@ -15,78 +15,33 @@ class IsA;
 class AbstractObject
 {
 public:
-    explicit AbstractObject();
+    explicit AbstractObject(QString s): id(s) {}
     ~AbstractObject();
 
-    void addProp(QString s)
-    {
-        properties.push_back(new Property(s));
-    }
+    void printProp()const;
+    QStringList getPorperties() const;
 
-    void setID(QString s){this->id = s;}
+    void massInvoke(bool doPrintProp);
+    void singleInvoke(QString s);
 
-    void printProp()const
-    {
-        for (Property* p : properties)
-        {
-            qDebug() << p->data;
-        }
-    }
+    void addLink(AbstractObject *obj, QString type="IsA");
+    void init();
 
-    QStringList getPorperties() const
-    {
-       QStringList res;
-        for (Property* p : properties)
-        {
-            res.push_back(p->data);
+    void addStrLink(QStringList s){stringLinks = s;}
+    QStringList linktype() { return this->LinksType; }
+
+    void addProp(QString s){ properties.push_back(new Property(s)); }
+    void addLinksType(QStringList s){LinksType = s;}
+
+    void clear(){this->properties.clear();}
+    QString getID(){return this->id;}
 
 
-        }
-        return res;
-    }
-
-  void massInvoke(bool doPrintProp);
-  void singleInvoke(QString s);
-
-
-  void addLink(AbstractObject *obj, QString type="IsA");
-  void addStrLink(QStringList s){stringLinks = s;}
-  void init();
-
-  void dbg()
-  {
-   qDebug() << "this object ID is:" << id;
-   qDebug() << "this properies lenght is:";
-   qDebug() <<  this->properties.length(); // lenght - zero.
-   qDebug() << "this properies  is:";
-
-   for (Property* a : this->properties)
-   {
-      qDebug() <<  a->data;
-   }
-   qDebug() << "-----------------";
-   qDebug() << "this object points to:";
-   for (Link* a: isaLinks)
-   {
-       a->getMethod();
-   }
-   qDebug() << "---------------";
-   qDebug() << "YYYYYYYYYYYYYYYYYYY";
-   qDebug() << "type:";
-
-  }
-
-  QStringList linktype()
-  {
-     return this->LinksType;
-  }  
-
-  QString id;
-  bool visited = false;
-  void addLinksType(QStringList s){LinksType = s;}
+    bool visited = false;
 
 private:
 
+    const QString id;
     QList <Property*> properties;
     QList <Link*> isaLinks;
     QStringList stringLinks ; // для корректной инициализации
